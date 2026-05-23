@@ -7,6 +7,29 @@ Forked from [Tingtun repo](https://gitlab.tingtun.no/eiii_source/pdfwam) engine 
 This consists of a command-line PDF checker and
 a SOAP based PDF wam and associated tools.
 
+Development environment (uv)
+----------------------------
+This project now supports [uv](https://docs.astral.sh/uv/) as the primary
+Python project/dependency manager via `pyproject.toml`.
+
+Quick start:
+
+1. Create a virtual environment
+
+   $ uv venv
+
+2. Install dependencies from `pyproject.toml`
+
+   $ uv sync
+
+3. Run tools inside the uv environment
+
+   $ uv run python pdfchecker.py
+   $ uv run python runtests.py
+
+Legacy `setup.py` and `requirements.txt` are kept for compatibility with
+existing workflows.
+
 Checker Tools
 -------------
 1. pdfchecker.py - Command-line tool to evaluate a PDF
@@ -133,6 +156,5 @@ $ sudo python pdfwam
 # Test using local path - full path required
 $ python pdftest.py test file:///home/dave/PdfWam/testfiles/wcag.pdf.01/images-with-and-without-ALT.pdf
 [ output truncated ]
-
 
 
